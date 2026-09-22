@@ -422,15 +422,14 @@ that JAM's own Docker image uses.
 
 ## Create or import a wallet
 
-JAM greets you with a choice between creating a wallet and importing
-one.
+After a short intro, JAM offers two buttons.
 
-- **Create wallet** makes a new seed. JAM shows the recovery words
+- **Create new wallet** makes a new seed. JAM shows the recovery words
   once; write them down, then set a wallet password.
-- **Import wallet** takes the seed words of an existing wallet, for
-  example the one from the JoinMarket guide, and creates a second,
-  JAM-managed wallet file for the same seed. The first open scans the
-  blockchain for its history, which takes a few minutes.
+- **Import existing wallet** takes the seed words of an existing
+  wallet, for example the one from the JoinMarket guide, and creates a
+  second, JAM-managed wallet file for the same seed. The first open
+  scans the blockchain for its history, which takes a few minutes.
 
 Both end up in `/home/joinmarket/.joinmarket-ng/wallets/`. JAM's
 wallet files and the `.mnemonic` files from the command line are
@@ -438,8 +437,9 @@ different formats; keep the "one operator per wallet" rule from above
 in mind if both exist for the same seed.
 
 After unlocking the wallet, the **Earn** tab starts and stops the
-maker, **Send** creates a CoinJoin as a taker, and the orderbook page
-shows the current offers, including your own once the maker runs.
+maker, **Send** creates a CoinJoin as a taker, and the **Orderbook**
+page shows the current offers, including your own once the maker runs.
+JAM calls the mixdepths "jars".
 
 **Main takeaway:** JAM is static files behind Caddy, `jmwalletd` is
 the only process that touches the wallet, and everything listens on
