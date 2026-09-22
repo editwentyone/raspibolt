@@ -235,3 +235,6 @@ CoinJoin(s)?
 [Tt]aker(s)?
 [Mm]aker(s)?
 orderbook
+jmwalletd
+JAM
+WebSocket
