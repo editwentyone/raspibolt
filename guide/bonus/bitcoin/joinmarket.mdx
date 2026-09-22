@@ -331,9 +331,10 @@ somewhere else or make sure you have the 24 seed words before you
 continue.
 </Callout>
 
-As user `admin`, unload the watch-only wallet from Bitcoin Core. List
-the loaded wallets to find its name; it is the one that appeared when
-you first ran `jm-wallet info`:
+As user `admin`, unload the watch-only wallet from Bitcoin Core.
+joinmarket-ng names it `jm_<fingerprint>_mainnet`, where the
+fingerprint is derived from the seed. List the loaded wallets to find
+it:
 
 ```bash
 bitcoin-cli listwallets
@@ -342,8 +343,11 @@ bitcoin-cli listwallets
 Unload it, using the name from the list:
 
 ```bash
-bitcoin-cli unloadwallet "<wallet name>"
+bitcoin-cli unloadwallet "jm_<fingerprint>_mainnet"
 ```
+
+The wallet directory stays under `/data/bitcoin/wallets/`; delete it
+if you don't plan to come back.
 
 Remove the user and its home directory, including the Python
 environment and the wallet:
