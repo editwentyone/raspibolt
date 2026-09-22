@@ -144,6 +144,11 @@ socks_port = 9050
 control_port = 9051
 cookie_path = "/run/tor/control.authcookie"
 
+[wallet]
+# Block height to start the initial scan from. Leave commented for a
+# new wallet; set it for a recovered wallet (see the v3 note below).
+# scan_start_height = 0
+
 [maker]
 # Relative offers use cj_fee_relative; absolute offers use cj_fee_absolute.
 # Keep min_size at its default: a different value makes your maker
@@ -327,7 +332,8 @@ continue.
 </Callout>
 
 As user `admin`, unload the watch-only wallet from Bitcoin Core. List
-the loaded wallets to find its name (it starts with `jm`):
+the loaded wallets to find its name; it is the one that appeared when
+you first ran `jm-wallet info`:
 
 ```bash
 bitcoin-cli listwallets
